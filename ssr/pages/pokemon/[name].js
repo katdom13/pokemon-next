@@ -4,6 +4,7 @@ import axios from 'axios'
 // import { useQuery } from 'react-query'
 import { Container, Row, Col } from 'react-bootstrap'
 import { Fragment } from 'react'
+import Appbar from '../../src/Appbar'
 
 
 const getPokemon = async (name) => {
@@ -24,7 +25,8 @@ export default ({ data }) => {
   // const router = useRouter()
   // const { data } = useQuery(router.query.name, getPokemon)
   return (
-    <div>
+    <Fragment>
+      <Appbar />
       <Head>
         <title>{(data && data.name.english) || "Pokemon"}</title>
       </Head>
@@ -55,6 +57,6 @@ export default ({ data }) => {
           )
         }
       </Container>
-    </div>
+    </Fragment>
   )
 }
